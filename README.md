@@ -56,67 +56,22 @@ send JSON:
 **Listar planetas API externa swapi.dev:** **PUT http://localhost:8080/search/all/external**
 
 ```sh
-
 {
         "planetTatooine": {
-            "films": [
-                "http://swapi.dev/api/films/1/",
-                "http://swapi.dev/api/films/3/",
-                "http://swapi.dev/api/films/4/",
-                "http://swapi.dev/api/films/5/",
-                "http://swapi.dev/api/films/6/"
-            ],
-            "edited": "2014-12-20T20:58:18.411000Z",
-            "created": "2014-12-09T13:50:49.641000Z",
-            "climate": "arid",
-            "rotation_period": "23",
-            "url": "http://swapi.dev/api/planets/1/",
-            "population": "200000",
-            "orbital_period": "304",
-            "surface_water": "1",
-            "diameter": "10465",
-            "gravity": "1 standard",
+            "clima": "arid",
             "name": "Tatooine",
-            "residents": [
-                "http://swapi.dev/api/people/1/",
-                "http://swapi.dev/api/people/2/",
-                "http://swapi.dev/api/people/4/",
-                "http://swapi.dev/api/people/6/",
-                "http://swapi.dev/api/people/7/",
-                "http://swapi.dev/api/people/8/",
-                "http://swapi.dev/api/people/9/",
-                "http://swapi.dev/api/people/11/",
-                "http://swapi.dev/api/people/43/",
-                "http://swapi.dev/api/people/62/"
-            ],
-            "terrain": "desert"
+            "show": "[http://swapi.dev/api/films/1/,http://swapi.dev/api/films/3/,http://swapi.dev/api/films/4/,http://swapi.dev/api/films/5/,http://swapi.dev/api/films/6/]",
+            "terreno": "desert"
         }
     },
     {
         "planetAlderaan": {
-            "films": [
-                "http://swapi.dev/api/films/1/",
-                "http://swapi.dev/api/films/6/"
-            ],
-            "edited": "2014-12-20T20:58:18.420000Z",
-            "created": "2014-12-10T11:35:48.479000Z",
-            "climate": "temperate",
-            "rotation_period": "24",
-            "url": "http://swapi.dev/api/planets/2/",
-            "population": "2000000000",
-            "orbital_period": "364",
-            "surface_water": "40",
-            "diameter": "12500",
-            "gravity": "1 standard",
+            "clima": "temperate",
             "name": "Alderaan",
-            "residents": [
-                "http://swapi.dev/api/people/5/",
-                "http://swapi.dev/api/people/68/",
-                "http://swapi.dev/api/people/81/"
-            ],
-            "terrain": "grasslands, mountains"
+            "show": "[http://swapi.dev/api/films/1/,http://swapi.dev/api/films/6/]",
+            "terreno": "grasslands, mountains"
         }
-    }
+    },
     ... + 58 planets data
 
 ```
