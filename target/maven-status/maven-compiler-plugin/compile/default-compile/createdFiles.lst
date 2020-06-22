@@ -1,0 +1,6 @@
+br/com/swapi/api/service/SearchApiService.class
+br/com/swapi/api/controller/SwapiController.class
+br/com/swapi/api/service/SearchService.class
+br/com/swapi/api/model/Planeta.class
+br/com/swapi/api/service/StarwarsRepository.class
+br/com/swapi/api/ApiApplication.class
