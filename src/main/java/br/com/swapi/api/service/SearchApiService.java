@@ -69,7 +69,7 @@ public class SearchApiService {
 		
 		ArrayNode arrayNode = objMapper.createArrayNode();
 		
-		for(int i = 1; i <= 10; i++ ) {
+		for(int i = 1; i <= numPlanetsConvert; i++ ) {
 			
 			try {
 				
@@ -78,15 +78,11 @@ public class SearchApiService {
 				System.out.println("PLANETA>>>>>>>>>>>> " + numPlanetsById.toString());
 				
 				ObjectNode parentNode = objMapper.createObjectNode();
-				
 				JsonNode jsonNode = objMapper.readTree(numPlanetsById.toString());
-				
 				parentNode.set("planet" + numPlanetsById.get("name"), jsonNode);
-				
 				arrayNode.add(parentNode);
 				
 			} catch (Exception e) {	}			
-			
 				return arrayNode;
 		}
 		
