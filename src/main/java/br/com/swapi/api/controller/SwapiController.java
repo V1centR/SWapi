@@ -27,14 +27,6 @@ public class SwapiController {
 
 	@Autowired
 	private StarwarsRepository starwarsRepo;
-
-	@GetMapping(value = "/home")
-	public String readData(Model model) throws Exception {
-
-		String dataTest = ".";
-		System.out.println(getNumPlanets());
-		return getNumPlanets().toString();
-	}
 	
 	@GetMapping(path = "/search/all/external")
 	public ArrayNode allPlanetsExternalApi() throws Exception {
@@ -60,6 +52,13 @@ public class SwapiController {
 	@PutMapping(path = "/add/")
 	public String insert(@RequestBody Planeta data) {
 		data.set_id(ObjectId.get());
+		Planeta newPlaneta = starwarsRepo.save(data);
+		return newPlaneta.toString();
+	}
+	
+	@PutMapping(path = "/edit/{id}")
+	public String edit(@RequestBody Planeta data,@PathVariable(name = "id") String id) {
+		data.set_id(data.get_id());
 		Planeta newPlaneta = starwarsRepo.save(data);
 		return newPlaneta.toString();
 	}

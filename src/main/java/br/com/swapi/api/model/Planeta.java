@@ -71,7 +71,7 @@ public class Planeta {
 	@Override
 	  public String toString() {
 	    return String.format(
-	        "Planeta[id=%s, name='%s', clima='%s', terreno='%s',shows='%s']",
+	        "{id=%s, name='%s', clima='%s', terreno='%s',shows='%s'}",
 	        _id, name, clima, terreno, shows);
 	  }
 

@@ -1,10 +1,8 @@
 package br.com.swapi.api.service;
 
-import java.security.PublicKey;
 import java.util.List;
 import java.util.Optional;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import br.com.swapi.api.model.Planeta;
