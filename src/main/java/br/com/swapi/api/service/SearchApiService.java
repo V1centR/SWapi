@@ -65,16 +65,34 @@ public class SearchApiService {
 		
 		ArrayNode arrayNode = objMapper.createArrayNode();
 		
+		String nomePlaneta;
+		String climaPlaneta;
+		String terrenoPlaneta;
+		String viewsPlaneta;
 			
 			try {
 				
-				for(int i = 1; i <= numPlanetsConvert; i++ ) {
+				for(int i = 1; i <= 10; i++ ) {
 				
 				JSONObject numPlanetsById = this.getBuilder("planets",""+i+"");
 				
 				ObjectNode parentNode = objMapper.createObjectNode();
 				JsonNode jsonNode = objMapper.readTree(numPlanetsById.toString());
-				parentNode.set("planet" + numPlanetsById.get("name"), jsonNode);
+				
+				nomePlaneta = jsonNode.get("name").toString().replace("\"","");
+				climaPlaneta = jsonNode.get("climate").toString().replace("\"","");
+				terrenoPlaneta = jsonNode.get("terrain").toString().replace("\"","");
+				viewsPlaneta = jsonNode.get("films").toString().replace("\"","");
+				
+				JSONObject planetaFiltered = new JSONObject();
+				planetaFiltered.put("name", nomePlaneta);
+				planetaFiltered.put("clima", climaPlaneta);
+				planetaFiltered.put("terreno", terrenoPlaneta);
+				planetaFiltered.put("show", viewsPlaneta);				
+				
+				JsonNode jsonNodeFilter = objMapper.readTree(planetaFiltered.toString());
+				
+				parentNode.set("planet" + numPlanetsById.get("name"), jsonNodeFilter);
 				arrayNode.add(parentNode);
 				}
 				
