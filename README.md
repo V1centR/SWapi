@@ -60,7 +60,7 @@ send JSON:
         "planetTatooine": {
             "clima": "arid",
             "name": "Tatooine",
-            "show": "[http://swapi.dev/api/films/1/,http://swapi.dev/api/films/3/,http://swapi.dev/api/films/4/,http://swapi.dev/api/films/5/,http://swapi.dev/api/films/6/]",
+            "show": 5,
             "terreno": "desert"
         }
     },
@@ -68,8 +68,16 @@ send JSON:
         "planetAlderaan": {
             "clima": "temperate",
             "name": "Alderaan",
-            "show": "[http://swapi.dev/api/films/1/,http://swapi.dev/api/films/6/]",
+            "show": 2,
             "terreno": "grasslands, mountains"
+        }
+    },
+    {
+        "planetYavin IV": {
+            "clima": "temperate, tropical",
+            "name": "Yavin IV",
+            "show": 1,
+            "terreno": "jungle, rainforests"
         }
     },
     ... + 58 planets data

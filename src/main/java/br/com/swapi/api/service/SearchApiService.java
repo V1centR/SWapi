@@ -7,8 +7,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -68,11 +70,10 @@ public class SearchApiService {
 		String nomePlaneta;
 		String climaPlaneta;
 		String terrenoPlaneta;
-		String viewsPlaneta;
 			
 			try {
 				
-				for(int i = 1; i <= 10; i++ ) {
+				for(int i = 1; i <= numPlanetsConvert; i++ ) {
 				
 				JSONObject numPlanetsById = this.getBuilder("planets",""+i+"");
 				
@@ -82,13 +83,16 @@ public class SearchApiService {
 				nomePlaneta = jsonNode.get("name").toString().replace("\"","");
 				climaPlaneta = jsonNode.get("climate").toString().replace("\"","");
 				terrenoPlaneta = jsonNode.get("terrain").toString().replace("\"","");
-				viewsPlaneta = jsonNode.get("films").toString().replace("\"","");
+				//viewsPlaneta = jsonNode.get("films").toString().replace("\"","");
+				
+				int numShows = numPlanetsById.getJSONArray("films").length();
 				
 				JSONObject planetaFiltered = new JSONObject();
+				
 				planetaFiltered.put("name", nomePlaneta);
 				planetaFiltered.put("clima", climaPlaneta);
 				planetaFiltered.put("terreno", terrenoPlaneta);
-				planetaFiltered.put("show", viewsPlaneta);				
+				planetaFiltered.put("show", numShows);				
 				
 				JsonNode jsonNodeFilter = objMapper.readTree(planetaFiltered.toString());
 				
