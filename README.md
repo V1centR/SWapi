@@ -53,7 +53,7 @@ send JSON:
 {id=5ef05384d2cf730e4e8c84eb, name='OutronomePlaneta', clima='climaPlaneta', terreno='nomeTerreno',shows='numeroDeShows em filmes'
 }
 ```
-**Listar planetas API externa swapi.dev:** **PUT http://localhost:8080/search/all/external**
+**Listar planetas API externa swapi.dev:** **GET http://localhost:8080/search/all/external**
 
 ```sh
 {
@@ -80,6 +80,6 @@ send JSON:
             "terreno": "jungle, rainforests"
         }
     },
-    ... + 58 planets data
+    ... + 57 planets data
 
 ```
